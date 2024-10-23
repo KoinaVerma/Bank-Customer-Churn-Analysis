@@ -7,9 +7,11 @@ Customer churn is a significant challenge for financial institutions, directly a
 ## Project Overview
 
 Objective
+
 The goal of this analysis is to identify key drivers of customer churn and to develop actionable insights that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on retaining high-value customers and reducing churn.
 
 Problem Statement
+
 This project addresses the following key questions:
 
 What is the overall churn rate of the bank?
@@ -81,7 +83,7 @@ Pie Chart (Customer Categories): Breaks down customers into different categories
 
 Matrix (Churn Percentage by Year and Month): Shows churn rates over time, allowing for a detailed view of churn trends by specific periods.
 
-### Insights
+## Insights
 
 Total Customers: The bank has a large customer base, but a significant portion is inactive.
 
