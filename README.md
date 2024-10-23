@@ -1,25 +1,18 @@
 # Bank Customer Churn Analysis
 
-Customer churn is a significant challenge for financial institutions, directly affecting revenue and profitability. This project explores the customer churn problem for a fictional bank using Power BI. By analyzing factors that contribute to customers leaving the bank, we aim to identify trends and potential interventions to reduce churn.
+Customer churn is a significant challenge for financial institutions, directly affecting revenue and profitability. This project explores the customer churn problem for a fictional bank using Power BI. By analyzing factors that contribute to customers leaving the bank, I aim to identify trends and potential interventions to reduce churn.
 
 ## Table of Content
 
 ## Project Overview
 
-Objective
+### Objective
 
 The goal of this analysis is to identify key drivers of customer churn and to develop actionable insights that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on retaining high-value customers and reducing churn.
 
-Problem Statement
+## Data Source
 
-This project addresses the following key questions:
-
-What is the overall churn rate of the bank?
-Which customer segments (age, gender, geography) are more likely to churn?
-What role do credit scores, tenure, and salary play in customer churn?
-How can the bank better predict and prevent customer churn?
-Data Source
-The dataset used for this analysis is downloaded from Kaggle, which provides various fictitious datasets for data projects. The dataset includes the following features:
+The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following features:
 
 CustomerID
 Geography
