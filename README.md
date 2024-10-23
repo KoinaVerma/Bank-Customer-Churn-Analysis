@@ -15,15 +15,25 @@ The goal of this analysis is to identify key drivers of customer churn and to de
 The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following features:
 
 CustomerID
+
 Geography
+
 Gender
+
 Age
+
 Tenure
+
 CreditScore
+
 Balance
+
 Salary
+
 Active/Inactive status
+
 Credit Card holding status
+
 Churn status (Exit/Retained)
 
 ## Data Cleaning
@@ -41,25 +51,25 @@ The analysis was conducted using Power BI, and various visualizations were creat
 
 ### KPI Cards
 
-Total Customers: Measures the total number of customers.
+- **Total Customers** : Measures the total number of customers.
 M code: CALCULATE(COUNTROWS(Customer))
 
-Active Customers: Measures customers who are still active.
+- **Active Customers** : Measures customers who are still active.
 M code: CALCULATE(COUNTROWS(Customer), Customer[Active] = "Yes")
 
-Inactive Customers: Measures customers who have become inactive.
+- **Inactive Customers** : Measures customers who have become inactive.
 M code: CALCULATE(COUNTROWS(Customer), Customer[Active] = "No")
 
-Credit Card Holders: Measures the number of customers with a credit card.
+- **Credit Card Holders** : Measures the number of customers with a credit card.
 M code: CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "Yes")
 
-Non-Credit Card Holders: Measures customers without a credit card.
+- **Non-Credit Card Holders** : Measures customers without a credit card.
 M code: CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "No")
 
-Exit Customers: Measures customers who have exited.
+- **Exit Customers** : Measures customers who have exited.
 M code: CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Exited")
 
-Retained Customers: Measures customers who have not churned.
+- **Retained Customers** : Measures customers who have not churned.
 M code: CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Retained")
 
 ### Visualizations
