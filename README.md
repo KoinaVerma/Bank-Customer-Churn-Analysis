@@ -47,9 +47,15 @@ Feature Engineering: Added calculated columns like ChurnPercentage to enhance an
 
 ## Analysis
 
-The analysis was conducted using Power BI, and various visualizations were created to explore customer churn patterns.
+The analysis was conducted using Power BI, and various KPI cards and visualizations were created to explore customer churn patterns.
+
+<br>
 
 ### KPI Cards
+
+I used **DAX measures** in Power BI to create these KPI cards, offering quick insights into the following key metrics:
+
+<br>
 
 - **Total Customers** : Measures the total number of customers.
 
