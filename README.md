@@ -12,29 +12,30 @@ The goal of this analysis is to identify key drivers of customer churn and to de
 
 ## Data Source
 
-The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following features:
+The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following columns:
 
-CustomerID
+- **CustomerID** - 
 
-Geography
+- **Geography** -
 
-Gender
+- **Gender** - 
 
-Age
+- **Age** - 
 
-Tenure
+- **Tenure** - 
 
-CreditScore
+- **CreditScore** - 
 
-Balance
+- **Balance** - 
 
-Salary
+- **Salary** -
 
-Active/Inactive status
+- **Active/Inactive status** - 
 
-Credit Card holding status
+- **Credit Card holding status** -
 
-Churn status (Exit/Retained)
+- **Churn status (Exit/Retained)** -
+
 
 ## Data Cleaning
 
