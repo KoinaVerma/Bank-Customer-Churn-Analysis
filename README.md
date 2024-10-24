@@ -52,25 +52,41 @@ The analysis was conducted using Power BI, and various visualizations were creat
 ### KPI Cards
 
 - **Total Customers** : Measures the total number of customers.
-M code: CALCULATE(COUNTROWS(Customer))
+
+``` dax
+Total Customers = CALCULATE(COUNTROWS(Customer))
+```
 
 - **Active Customers** : Measures customers who are still active.
-M code: CALCULATE(COUNTROWS(Customer), Customer[Active] = "Yes")
+
+``` dax
+Active Customers = CALCULATE(COUNTROWS(Customer), Customer[Active] = "Yes")
+```
 
 - **Inactive Customers** : Measures customers who have become inactive.
-M code: CALCULATE(COUNTROWS(Customer), Customer[Active] = "No")
+``` dax
+Inactive Customers = CALCULATE(COUNTROWS(Customer), Customer[Active] = "No")
+```
 
 - **Credit Card Holders** : Measures the number of customers with a credit card.
-M code: CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "Yes")
+``` dax
+Credit Card Holders = CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "Yes")
+```
 
 - **Non-Credit Card Holders** : Measures customers without a credit card.
-M code: CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "No")
+``` dax
+Non-Credit Card Holders = CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "No")
+```
 
 - **Exit Customers** : Measures customers who have exited.
-M code: CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Exited")
+``` dax
+Exit Customers = CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Exited")
+```
 
 - **Retained Customers** : Measures customers who have not churned.
-M code: CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Retained")
+``` dax
+Retained Customers = CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Retained")
+```
 
 ### Visualizations
 
