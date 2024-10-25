@@ -14,28 +14,33 @@ The goal of this analysis is to identify key drivers of customer churn and to de
 
 The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following columns:
 
-- **CustomerID** - 
+**CustomerId** : Unique identifier for each customer.
 
-- **Geography** -
+**CreditScore** : Credit score of the customer, indicating creditworthiness.
 
-- **Gender** - 
+**GeographyID** : Geographic region the customer belongs to, represented by a numeric code.
 
-- **Age** - 
+**GenderID** : Gender of the customer, represented as a numeric code (1 for male, 2 for female).
 
-- **Tenure** - 
+**Age** : Age of the customer.
 
-- **CreditScore** - 
+**Tenure** : Number of years the customer has been with the bank.
 
-- **Balance** - 
+**Balance** : Account balance of the customer.
 
-- **Salary** -
+**NumOfProducts** : Number of products the customer holds with the bank (e.g., loans, savings accounts).
 
-- **Active/Inactive status** - 
+**HasCrCard** : Whether the customer owns a credit card (1 for yes, 0 for no).
 
-- **Credit Card holding status** -
+**IsActiveMember** : Whether the customer is an active member of the bank (1 for active, 0 for inactive).
 
-- **Churn status (Exit/Retained)** -
+**EstimatedSalary** : Estimated annual salary of the customer.
 
+**Exited** : Whether the customer has churned (1 for yes, 0 for no).
+
+**Bank DOJ** : The date the customer joined the bank.
+
+<br>
 
 ## Data Cleaning
 
@@ -54,46 +59,79 @@ The analysis was conducted using Power BI, and various KPI cards and visualizati
 
 ### KPI Cards
 
-I used **DAX measures** in Power BI to create these KPI cards, offering quick insights into the following key metrics:
+I used **DAX measures** in Power BI to create these KPI cards, provides a clear picture of the bank's customer status and areas that need attention, such as re-engaging inactive customers and reducing churn.
 
 <br>
 
-- **Total Customers** : Measures the total number of customers.
+1. **Total Customers** : (10,000)
+
+- Measures the total number of customers. The bank has a broad customer base, offering a large opportunity for retention strategies.
 
 ``` dax
-Total Customers = CALCULATE(COUNTROWS(Customer))
+  Total Customers = CALCULATE(COUNTROWS(Customer))
 ```
 
-- **Active Customers** : Measures customers who are still active.
+<br>
+
+2. **Active Customers** : (5,151)
+
+- Measures customers who are still active. Around half of the total customers are actively engaged with the bank, indicating room for improvement in customer engagement.
 
 ``` dax
 Active Customers = CALCULATE(COUNTROWS(Customer), Customer[Active] = "Yes")
 ```
 
-- **Inactive Customers** : Measures customers who have become inactive.
+<br>
+
+3. **Inactive Customers** : (4,849)
+
+    Measures customers who have become inactive. Nearly half of the customer base is inactive, which poses a risk for churn if not re-engaged.
+
 ``` dax
 Inactive Customers = CALCULATE(COUNTROWS(Customer), Customer[Active] = "No")
 ```
 
-- **Credit Card Holders** : Measures the number of customers with a credit card.
+<br>
+
+4. **Credit Card Holders** : (7,055)
+
+   Shows the number of customers who hold a credit card with the bank. A significant portion of customers use the bank’s credit card services, which could be leveraged to improve retention.
+
 ``` dax
 Credit Card Holders = CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "Yes")
 ```
 
-- **Non-Credit Card Holders** : Measures customers without a credit card.
+<br>
+
+5. **Non-Credit Card Holders** : (2,945)
+
+   Displays the number of customers who do not have a credit card. There is an opportunity to target non-credit card holders with incentives to boost engagement and potentially reduce churn.
+  
 ``` dax
 Non-Credit Card Holders = CALCULATE(COUNTROWS(Customer), Customer[CreditCard] = "No")
 ```
 
-- **Exit Customers** : Measures customers who have exited.
+<br>
+
+6. **Exit Customers** : (2,037)
+
+   This card shows the number of customers who have exited or churned. The churn rate is substantial, with over 20% of the customer base leaving, highlighting the need for retention-focused strategies.
+
 ``` dax
 Exit Customers = CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Exited")
 ```
 
-- **Retained Customers** : Measures customers who have not churned.
+<br>
+
+7. **Retained Customers** : (7,963)
+
+   Displays the number of customers who have stayed with the bank and not churned. The majority of customers are retained, which is a positive sign, but continued efforts are necessary to prevent future churn.
+  
 ``` dax
 Retained Customers = CALCULATE(COUNTROWS(Customer), Customer[ChurnStatus] = "Retained")
 ```
+
+<br>
 
 ### Visualizations
 
