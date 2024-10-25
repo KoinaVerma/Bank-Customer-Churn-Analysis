@@ -65,7 +65,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 1. **Total Customers** : (10,000)
 
-- Measures the total number of customers. The bank has a broad customer base, offering a large opportunity for retention strategies.
+   Measures the total number of customers. The bank has a broad customer base, offering a large opportunity for retention strategies.
 
 ``` dax
   Total Customers = CALCULATE(COUNTROWS(Customer))
@@ -75,7 +75,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 2. **Active Customers** : (5,151)
 
-- Measures customers who are still active. Around half of the total customers are actively engaged with the bank, indicating room for improvement in customer engagement.
+   Measures customers who are still active. Around half of the total customers are actively engaged with the bank, indicating room for improvement in customer engagement.
 
 ``` dax
 Active Customers = CALCULATE(COUNTROWS(Customer), Customer[Active] = "Yes")
