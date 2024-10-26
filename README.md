@@ -298,4 +298,4 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 ## CONCLUSION
 
-This project provides an in-depth analysis of customer churn within a bank and highlights key areas where improvements can be made to increase customer retention. By leveraging data insights and implementing targeted interventions, the bank can reduce churn and improve overall profitability.
+This Bank Customer Churn Analysis provides valuable insights into customer behavior, identifying key factors influencing churn such as **credit card ownership, regional variations, age group,** and **credit score**. By leveraging these insights, the bank can implement targeted retention strategies to improve customer engagement, particularly among inactive customers, senior citizens, and high-churn regions like Germany. Additionally, enhancing the value proposition for credit card holders and offering tailored support for lower credit score customers can further reduce churn. Through data-driven interventions, the bank can effectively improve customer retention, reduce revenue loss, and increase long-term profitability.
