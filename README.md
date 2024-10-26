@@ -1,6 +1,6 @@
 # Bank Customer Churn Analysis
 
-Customer churn is a significant challenge for financial institutions, directly affecting revenue and profitability. This project explores the customer churn problem for a fictional bank using Power BI. By analyzing factors that contribute to customers leaving the bank, I aim to identify trends and potential interventions to reduce churn.
+Customer churn is a significant challenge for financial institutions, directly affecting revenue and profitability. This project explores the customer churn problem for a fictional bank using **Power BI**. By analyzing factors that contribute to customers leaving the bank, I aim to identify trends and potential interventions to **reduce churn**.
 
 <br>
 
@@ -59,12 +59,8 @@ The data was sourced from **Kaggle.com**, which offers a range of fictitious dat
 
 ## DATA CLEANING
 
-Before starting the analysis, the following data cleaning steps were applied:
+After importing the data into Power BI, I first verified that all **data types** were correct. Using the column distribution and column quality features in the Power Query Editor, I checked for **duplicates** and **empty** values and found none. Additionally, I removed the 'RowNumber' column, as it was a sequential identifier not relevant to the analysis.
 
-Handling Missing Values: Checked for any missing or null values in the dataset and replaced them appropriately.
-Formatting Data Types: Ensured all columns had correct data types for analysis (e.g., numerical, categorical).
-Creation of Date Table: Created a DateMaster table to manage time-based analyses.
-Feature Engineering: Added calculated columns like ChurnPercentage to enhance analysis.
 
 <br>
 
@@ -76,13 +72,36 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
  
 1. **Creating a Calendar Table** :
    
-- I created a calendar table to manage time-based filtering, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
+- First I created a calendar table to manage time-based filtering, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
 
 - The formula used:
 
 ``` Calendar Table
-Calendar_Table = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]),LASTDATE(Bank_Churn[Bank DOJ]))
+  Calendar_Table = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]),LASTDATE(Bank_Churn[Bank DOJ]))
 ```
+
+<br>
+
+- The formula generated a range of dates based on the earliest and latest dates found in the "car_data" table under the "Date" column in a new table.
+
+- Then I extracted the month, year and week from the designated column, using the following formulas:
+
+  --- for year
+  Year = YEAR(Calendar_Table[Date])
+
+  --- for month
+  Month = MONTH(Calendar_Table[Date])
+
+  --- for month name
+  Month Name = FORMAT(Calendar_Table[Date],"MMM")
+
+<br>
+
+   **A quick look at the Calendar Table:**
+
+<br>
+
+- To establish a relationship between the car_data table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol '1', while in the car_data table some dates might have appeared multiple times, indicated by the symbol '*'. Which signified a **One-to-Many** relationship between the two tables.
 
 <br>
 
@@ -93,12 +112,12 @@ Calendar_Table = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]),LASTDATE(Bank_Churn[Ba
 - The **DAX** code used:
 
 ``` Credit Type
-CreditType = SWITCH(TRUE(),
-   Bank_Churn[CreditScore] >= 800 && Bank_Churn[CreditScore] <= 850, "Excellent",
-   Bank_Churn[CreditScore] >= 740 && Bank_Churn[CreditScore] <= 799, "Very Good",
-   Bank_Churn[CreditScore] >= 670 && Bank_Churn[CreditScore] <= 739, "Good",
-   Bank_Churn[CreditScore] >= 580 && Bank_Churn[CreditScore] <= 669, "Fair",
-   Bank_Churn[CreditScore] >= 300 && Bank_Churn[CreditScore] <= 579, "Poor")
+  CreditType = SWITCH(TRUE(),
+    Bank_Churn[CreditScore] >= 800 && Bank_Churn[CreditScore] <= 850, "Excellent",
+    Bank_Churn[CreditScore] >= 740 && Bank_Churn[CreditScore] <= 799, "Very Good",
+    Bank_Churn[CreditScore] >= 670 && Bank_Churn[CreditScore] <= 739, "Good",
+    Bank_Churn[CreditScore] >= 580 && Bank_Churn[CreditScore] <= 669, "Fair",
+    Bank_Churn[CreditScore] >= 300 && Bank_Churn[CreditScore] <= 579, "Poor")
 ```  
 
 <br>
@@ -110,63 +129,30 @@ CreditType = SWITCH(TRUE(),
 - The **DAX** code used:
 
 ``` Age Group
-AgeGroup = SWITCH(TRUE(),
-   Bank_Churn[Age] >= 18 && Bank_Churn[Age] <= 35, "Young Adults",
-   Bank_Churn[Age] >= 36 && Bank_Churn[Age] <= 55, "Adults",
-   Bank_Churn[Age] >= 56 && Bank_Churn[Age] <= 92, "Senior Citizens",
-   "Unknown")
+  AgeGroup = SWITCH(TRUE(),
+     Bank_Churn[Age] >= 18 && Bank_Churn[Age] <= 35, "Young Adults",
+     Bank_Churn[Age] >= 36 && Bank_Churn[Age] <= 55, "Adults",
+     Bank_Churn[Age] >= 56 && Bank_Churn[Age] <= 92, "Senior Citizens",
+     "Unknown")
 ```
 
 <br>
 
 ## ANALYSIS
 
-### Calendar Table
-
-The first thing I did while starting to analyze the data was creating a calendar table. The calendar table helped me in performing accurate and flexible time-based analysis. It allowed me to easily perform date-related calculations such as Year-to-Date (YTD), Month-to-Date (MTD), and Year-on-year (YOY), as well as compare data across different time periods.
-
-First I created a table named Calendar table;
-
-Calendar_Table = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]),LASTDATE(Bank_Churn[Bank DOJ]))
-
-The formula generated a range of dates based on the earliest and latest dates found in the "car_data" table under the "Date" column in a new table.
-
-Then I extracted the month, year and week from the designated column, using the following formulas:
-
---- for year
-Year = YEAR(Calendar_Table[Date])
-
---- for month
-Month = MONTH(Calendar_Table[Date])
-
---- for month name
-Month Name = FORMAT(Calendar_Table[Date],"MMM")
-
-<br>
-
-A quick look at the Calendar Table:
-
-
-
-To establish a relationship between the car_data table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol '1', while in the car_data table some dates might have appeared multiple times, indicated by the symbol '*'. Which signified a **One-to-Many** relationship between the two tables.
-
-### Added Column
-
-
-
-
-
 The analysis was conducted using Power BI, and various KPI cards and visualizations were created to explore customer churn patterns.
 
 <br>
 
-### KPI Cards
+### DASHBOARD 1
+
+#### 1. KPI Cards
 
 I used **DAX measures** in Power BI to create these KPI cards, provides a clear picture of the bank's customer status and areas that need attention, such as re-engaging inactive customers and reducing churn.
 
 <br>
 
-1. **Total Customers** : (10,000)
+- **Total Customers** : (10,000)
 
    Measures the total number of customers. The bank has a broad customer base, offering a large opportunity for retention strategies.
 
@@ -176,7 +162,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-2. **Active Customers** : (5,151)
+- **Active Customers** : (5,151)
 
    Measures customers who are still active. Around half of the total customers are actively engaged with the bank, indicating room for improvement in customer engagement.
 
@@ -186,7 +172,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-3. **Inactive Customers** : (4,849)
+- **Inactive Customers** : (4,849)
 
     Measures customers who have become inactive. Nearly half of the customer base is inactive, which poses a risk for churn if not re-engaged.
 
@@ -196,7 +182,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-4. **Credit Card Holders** : (7,055)
+- **Credit Card Holders** : (7,055)
 
    Shows the number of customers who hold a credit card with the bank. A significant portion of customers use the bank’s credit card services, which could be leveraged to improve retention.
 
@@ -206,7 +192,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-5. **Non-Credit Card Holders** : (2,945)
+- **Non-Credit Card Holders** : (2,945)
 
    Displays the number of customers who do not have a credit card. There is an opportunity to target non-credit card holders with incentives to boost engagement and potentially reduce churn.
   
@@ -216,7 +202,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-6. **Exit Customers** : (2,037)
+- **Exit Customers** : (2,037)
 
    This card shows the number of customers who have exited or churned. The churn rate is substantial, with over 20% of the customer base leaving, highlighting the need for retention-focused strategies.
 
@@ -226,7 +212,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-7. **Retained Customers** : (7,963)
+- **Retained Customers** : (7,963)
 
    Displays the number of customers who have stayed with the bank and not churned. The majority of customers are retained, which is a positive sign, but continued efforts are necessary to prevent future churn.
   
@@ -236,23 +222,17 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-### Visualizations
+**2. Annual Distribution of Active and Inactive Customers**: A column chart that displays the yearly breakdown of active vs. inactive customers, highlighting engagement trends over time.
 
-Clustered Column Chart (Total Customers by Year and Active Category): Displays customer distribution across years, comparing active vs inactive customers.
+**3. Monthly Exit Customers and Prior Month Comparison**: A line chart comparing monthly churn with the previous month’s values, allowing identification of seasonal or monthly churn spikes.
 
-Line Chart (Exit Customers by Month): Shows the monthly trend of customers exiting the bank.
+**4. Exit Customers by Gender**: A donut chart showing churn rates for males and females, revealing gender-based churn differences.
 
-Clustered Bar Chart (Exit Customers by Credit Type): Compares churn rates between credit card holders and non-holders.
+**5. Exit Customers by Credit Type**: A bar chart detailing churn by credit score categories, illustrating churn likelihood across different creditworthiness levels.
 
-Donut Chart (Exit Customers by Gender): Displays the proportion of male and female customers who have exited the bank.
+**6. Exit Customers by Credit Card Status**: A pie chart showing churn rates for credit card holders vs. non credit card holders, indicating a higher churn rate among card holders.
 
-Pie Chart (Customer Categories): Breaks down customers into different categories (active, inactive, churned, etc.).
-
-Matrix (Churn Percentage by Year and Month): Shows churn rates over time, allowing for a detailed view of churn trends by specific periods.
-
-<br>
-
-### Slicers
+#### 7. Slicers
 
 - **Year** : Filters the data to display information for a selected year or across multiple years.
   
@@ -268,33 +248,51 @@ Matrix (Churn Percentage by Year and Month): Shows churn rates over time, allowi
 
   <br>
 
+### DASHBOARD 2
+
+**1. Monthly Churn Rates Across Years**: A heatmap providing a month-by-month view of churn rates across years, highlighting periods of high churn.
+
+**2. Churn % by Geography Location**: A map visual displaying churn percentages across different regions, identifying geographic areas with higher churn rates.
+
+**3. Credit Score, Churn Rate, and Tenure Correlation**: A scatter plot that shows the relationship between credit score, churn rate, and tenure, revealing insights on how creditworthiness and tenure impact churn.
+
+**4. Churn % by Age Group**: A pie chart categorizing churn by age group, indicating which age groups are more likely to churn.
+
+**5. Churn % by Tenure (years)**: A line chart showing the churn rate over different tenure lengths, with specific tenure ranges experiencing higher churn.
+
+**6. Churned and Retained Customers by Age Group**: A bar chart comparing churned and retained customers across different age groups, helping visualize which groups have higher retention.
+
+<br>
+
 ## INSIGHTS
 
-Total Customers: The bank has a large customer base, but a significant portion is inactive.
+**1. Customer Engagement**: Customer Engagement: Nearly half of the customer base **(4,849 out of 10,000)** is **inactive**, as shown in the KPI cards. This presents a risk for churn if engagement strategies aren’t implemented to re-engage inactive customers.
 
-Active vs Inactive Customers: There is a notable number of inactive customers, indicating potential issues with customer engagement.
+**2. Credit Card Impact**: The Exit Customers by Credit Card Status pie chart indicates that **credit card holders** have a higher churn rate (**69.91%** or 1,424 customers) compared to non-credit card holders (30.09% or 613 customers). This suggests that current credit card offerings may not provide sufficient value to retain customers.
 
-Credit Card Holders: Credit card holders are less likely to churn, suggesting the importance of offering credit products to retain customers.
+**3. Churn Trends**: The Monthly Exit Customers and Prior Month Comparison line chart shows seasonal churn patterns, with significant spikes in **November (307 exits)** and **December (283 exits)**. These peaks could indicate external or seasonal factors affecting churn rates.
 
-Churn Trend: The line chart reveals that customer churn spikes at certain times of the year, indicating possible seasonal effects or external factors.
+**4. Age-Based Churn**: The Churn % by Age Group pie chart highlights that "Senior Citizens" (ages 56-92) have the highest churn rate at 50.5%, followed by "Adults" (ages 36-55) at 38.01%, while "Young Adults" (ages 18-35) show the lowest churn rate at 11.48%. This insight suggests a need for targeted retention efforts aimed at **Senior Citizen** customers.
 
-Gender Analysis: Male and female customers churn at different rates, with males having a slightly higher churn rate in this dataset.
+**5. Geographic Variations**: The Churn % by Geography Location map shows that certain regions have higher churn rates, with **Germany (32.44%)** being the highest. This suggests that regional factors, possibly economic or competitive pressures, may influence churn.
 
-Churn by Credit Type: Non-credit card holders are more likely to churn, possibly due to fewer benefits or engagement with the bank’s services.
+**6. Creditworthiness Influence**: As seen in the Exit Customers by Credit Type bar chart, customers with lower credit scores (classified as **"Fair" and "Poor"**) exhibit higher churn rates, with **685** and **520** exits, respectively. This underscores the importance of providing tailored support or services for lower-score customers to improve retention.
 
 <br>
 
 ## RECOMMENDATIONS
 
-Enhance Customer Engagement: The bank should focus on re-engaging inactive customers through personalized offers, rewards, or additional services, such as credit cards or loans, to increase their interaction with the bank.
+**1. Increase Engagement for Inactive Customers**: Design targeted campaigns to re-engage the **4,849 inactive customers**, such as personalized offers, rewards, or exclusive services.
 
-Credit Card Incentives: Given that credit card holders are less likely to churn, offering targeted incentives for customers without credit cards may help improve retention.
+**2. Enhance Credit Card Value Proposition**: Given that credit card holders have a higher churn rate, the bank should review its credit card offerings and consider **adding more benefits** or **incentives** to encourage loyalty.
 
-Targeted Retention Programs: Create specific retention programs for high-risk segments such as non-credit card holders and inactive customers, particularly during periods where churn spikes are observed.
+**3. Implement Seasonal Retention Campaigns**: To address seasonal churn peaks observed in **November** and **December**, consider implementing proactive retention campaigns in these months, such as **limited-time offers** or **enhanced customer support**.
 
-Improve Churn Prediction: Implement machine learning models to predict high-risk customers based on credit score, tenure, and salary to take proactive measures.
+**4. Focus on Retaining Senior Citizens**: With Senior Citizens showing the highest churn rate at **50.5%**, develop specific retention strategies tailored to this age group. Consider offering services that cater to their needs, such as **enhanced customer support, financial planning resources,** or **loyalty programs** specifically designed for long-term customers.
 
-Address Gender Disparity: Further analysis is needed to understand why churn rates differ between genders, and the bank should explore tailored engagement strategies for each group.
+**5. Regional Focus on High-Churn Areas**: For regions with higher churn, such as **Germany**, conduct a deeper analysis to **understand regional issues** and **implement localized retention strategies**.
+
+**6. Support for Low Credit Score Customers**: Provide **financial wellness programs** or **credit-building services** targeted at customers with lower credit scores (those classified as **"Fair"** or **"Poor"**) to improve their financial health and foster loyalty.
 
 <br>
 
