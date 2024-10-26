@@ -4,6 +4,14 @@ Customer churn is a significant challenge for financial institutions, directly a
 
 ## Table of Content
 
+- [Project Overview](#project_overview)
+- [Data Source](#data_source)
+- [Data Cleaning](#data_cleaning)
+- [Data Preparation](#data_preparation)
+- [Analysis](#analysis)
+- [Insights](#insights)
+- [Recommendations](#recommendations)
+  
 ## Project Overview
 
 ### Objective
