@@ -70,7 +70,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
  
-1. **Creating a Calendar Table** :
+### 1. **Creating a Calendar Table** :
    
 - First I created a calendar table to manage time-based filtering, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
 
@@ -105,7 +105,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-2. **Adding the 'Credit Type' Column** :
+### 2. **Adding the 'Credit Type' Column** :
 
 - Understanding customer creditworthiness is key to this analysis. I added a column to categorize customers based on their credit score into meaningful ranges: **"Excellent," "Very Good," "Good," "Fair,"** and **"Poor."** This allows me to examine how customers from different credit score categories behave when it comes to churn.
 
@@ -122,7 +122,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-3. **Adding the 'Age Group' Column** :
+### 3. **Adding the 'Age Group' Column** :
 
 - Age plays an important role in customer behavior, so I created an additional column to group customers into three distinct categories: **"Young Adults," "Adults,"** and **"Senior Citizens."** This will help me analyze churn trends across different life stages, which could be valuable for targeted customer retention strategies.
 
@@ -222,15 +222,15 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-**2. Annual Distribution of Active and Inactive Customers**: A column chart that displays the yearly breakdown of active vs. inactive customers, highlighting engagement trends over time.
+**2. Annual Distribution of Active and Inactive Customers**: A **column chart** that displays the yearly breakdown of active vs. inactive customers, highlighting engagement trends over time.
 
-**3. Monthly Exit Customers and Prior Month Comparison**: A line chart comparing monthly churn with the previous month’s values, allowing identification of seasonal or monthly churn spikes.
+**3. Monthly Exit Customers and Prior Month Comparison**: A **line chart** comparing monthly churn with the previous month’s values, allowing identification of seasonal or monthly churn spikes.
 
-**4. Exit Customers by Gender**: A donut chart showing churn rates for males and females, revealing gender-based churn differences.
+**4. Exit Customers by Gender**: A **donut chart** showing churn rates for males and females, revealing gender-based churn differences.
 
-**5. Exit Customers by Credit Type**: A bar chart detailing churn by credit score categories, illustrating churn likelihood across different creditworthiness levels.
+**5. Exit Customers by Credit Type**: A **bar chart** detailing churn by credit score categories, illustrating churn likelihood across different creditworthiness levels.
 
-**6. Exit Customers by Credit Card Status**: A pie chart showing churn rates for credit card holders vs. non credit card holders, indicating a higher churn rate among card holders.
+**6. Exit Customers by Credit Card Status**: A **pie chart** showing churn rates for credit card holders vs. non credit card holders, indicating a higher churn rate among card holders.
 
 #### 7. Slicers
 
@@ -250,17 +250,17 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 ### DASHBOARD 2
 
-**1. Monthly Churn Rates Across Years**: A heatmap providing a month-by-month view of churn rates across years, highlighting periods of high churn.
+**1. Monthly Churn Rates Across Years**: A **heatmap** providing a month-by-month view of churn rates across years, highlighting periods of high churn.
 
-**2. Churn % by Geography Location**: A map visual displaying churn percentages across different regions, identifying geographic areas with higher churn rates.
+**2. Churn % by Geography Location**: A **map** visual displaying churn percentages across different regions, identifying geographic areas with higher churn rates.
 
-**3. Credit Score, Churn Rate, and Tenure Correlation**: A scatter plot that shows the relationship between credit score, churn rate, and tenure, revealing insights on how creditworthiness and tenure impact churn.
+**3. Credit Score, Churn Rate, and Tenure Correlation**: A **scatter plot** that shows the relationship between credit score, churn rate, and tenure, revealing insights on how creditworthiness and tenure impact churn.
 
-**4. Churn % by Age Group**: A pie chart categorizing churn by age group, indicating which age groups are more likely to churn.
+**4. Churn % by Age Group**: A **pie chart** categorizing churn by age group, indicating which age groups are more likely to churn.
 
-**5. Churn % by Tenure (years)**: A line chart showing the churn rate over different tenure lengths, with specific tenure ranges experiencing higher churn.
+**5. Churn % by Tenure (years)**: A **line chart** showing the churn rate over different tenure lengths, with specific tenure ranges experiencing higher churn.
 
-**6. Churned and Retained Customers by Age Group**: A bar chart comparing churned and retained customers across different age groups, helping visualize which groups have higher retention.
+**6. Churned and Retained Customers by Age Group**: A **bar chart** comparing churned and retained customers across different age groups, helping visualize which groups have higher retention.
 
 <br>
 
