@@ -2,7 +2,9 @@
 
 Customer churn is a significant challenge for financial institutions, directly affecting revenue and profitability. This project explores the customer churn problem for a fictional bank using Power BI. By analyzing factors that contribute to customers leaving the bank, I aim to identify trends and potential interventions to reduce churn.
 
-## Table of Content
+<br>
+
+## TABLE OF CONTENT
 
 - [Project Overview](#project_overview)
 - [Data Source](#data_source)
@@ -11,16 +13,21 @@ Customer churn is a significant challenge for financial institutions, directly a
 - [Analysis](#analysis)
 - [Insights](#insights)
 - [Recommendations](#recommendations)
+- [Conclusion](#conclusion)
+
+<br>
   
-## Project Overview
+## PROJECT OVERVIEW
 
-### Objective
+The goal of this analysis is to identify key drivers of customer churn and to develop actionable insights that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on **retaining high-value customers** and **reducing churn**.
 
-The goal of this analysis is to identify key drivers of customer churn and to develop actionable insights that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on retaining high-value customers and reducing churn.
+<br>
 
-## Data Source
+## DATA SOURCE
 
-The dataset used for this analysis is downloaded from Kaggle.com, which provides various fictitious datasets for data projects. The dataset includes the following columns:
+The data was sourced from **Kaggle.com**, which offers a range of fictitious datasets for data projects. The dataset used for this analysis is in **CSV format** or an **Excel Workbook** and consists of **14 columns** and **10,000 rows**. It contains the following columns:
+
+<br>
 
 **CustomerId** : Unique identifier for each customer.
 
@@ -50,7 +57,7 @@ The dataset used for this analysis is downloaded from Kaggle.com, which provides
 
 <br>
 
-## Data Cleaning
+## DATA CLEANING
 
 Before starting the analysis, the following data cleaning steps were applied:
 
@@ -61,7 +68,7 @@ Feature Engineering: Added calculated columns like ChurnPercentage to enhance an
 
 <br>
 
-## Data Preparation
+## DATA PREPARATION
 
 As part of getting the dataset ready for analysis, I took several steps to ensure that I could capture important trends and insights effectively. To do this, I created a Calendar Table and added custom columns to improve the segmentation and organization of the data.
 
@@ -112,7 +119,7 @@ AgeGroup = SWITCH(TRUE(),
 
 <br>
 
-## Analysis
+## ANALYSIS
 
 ### Calendar Table
 
@@ -261,7 +268,7 @@ Matrix (Churn Percentage by Year and Month): Shows churn rates over time, allowi
 
   <br>
 
-## Insights
+## INSIGHTS
 
 Total Customers: The bank has a large customer base, but a significant portion is inactive.
 
@@ -275,7 +282,9 @@ Gender Analysis: Male and female customers churn at different rates, with males 
 
 Churn by Credit Type: Non-credit card holders are more likely to churn, possibly due to fewer benefits or engagement with the bank’s services.
 
-## Recommendations
+<br>
+
+## RECOMMENDATIONS
 
 Enhance Customer Engagement: The bank should focus on re-engaging inactive customers through personalized offers, rewards, or additional services, such as credit cards or loans, to increase their interaction with the bank.
 
@@ -287,6 +296,8 @@ Improve Churn Prediction: Implement machine learning models to predict high-risk
 
 Address Gender Disparity: Further analysis is needed to understand why churn rates differ between genders, and the bank should explore tailored engagement strategies for each group.
 
-## Conclusion
+<br>
+
+## CONCLUSION
 
 This project provides an in-depth analysis of customer churn within a bank and highlights key areas where improvements can be made to increase customer retention. By leveraging data insights and implementing targeted interventions, the bank can reduce churn and improve overall profitability.
