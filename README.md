@@ -70,7 +70,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
  
-### 1. **Creating a Calendar Table** :
+### 1. **Created a Calendar Table** :
    
 - First I created a calendar table to manage **time-based filtering**, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
 
@@ -82,9 +82,9 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-- The formula generated a range of dates based on the earliest and latest dates found in the "car_data" table under the "Date" column in a new table.
+- The formula generated a range of dates based on the earliest and latest dates found in the "Bank_Churn" table under the "Date" column in a new table.
 
-- Then I extracted the month, year and week from the designated column, using the following formulas:
+- Then I extracted the **year, month** and **month name** from the designated column, using the following formulas:
 
   --- for year
   Year = YEAR(Calendar_Table[Date])
@@ -101,11 +101,11 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-- To establish a relationship between the car_data table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol '1', while in the car_data table some dates might have appeared multiple times, indicated by the symbol '*'. Which signified a **One-to-Many** relationship between the two tables.
+- To establish a relationship between the Bank_Churn table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol **'1'**, while in the Bank_Churn table some dates might have appeared multiple times, indicated by the symbol **'*'**. Which signified a **One-to-Many** relationship between the two tables.
 
 <br>
 
-### 2. **Adding the 'Credit Type' Column** :
+### 2. **Added the 'Credit Type' Column** :
 
 - Understanding customer creditworthiness is key to this analysis. I added a column to categorize customers based on their credit score into meaningful ranges: **"Excellent," "Very Good," "Good," "Fair,"** and **"Poor."** This allows me to examine how customers from different credit score categories behave when it comes to churn.
 
@@ -122,7 +122,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-### 3. **Adding the 'Age Group' Column** :
+### 3. **Added the 'Age Group' Column** :
 
 - Age plays an important role in customer behavior, so I created an additional column to group customers into three distinct categories: **"Young Adults," "Adults,"** and **"Senior Citizens."** This will help me analyze churn trends across different life stages, which could be valuable for targeted customer retention strategies.
 
@@ -140,7 +140,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 ## ANALYSIS
 
-The analysis was conducted using Power BI, and various KPI cards and visualizations were created to explore customer churn patterns.
+I created two dashboards to visualize my analysis, incorporating KPI cards and various charts to provide a comprehensive view of customer churn patterns and key insights.
 
 <br>
 
@@ -232,7 +232,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 **6. Exit Customers by Credit Card Status**: A **pie chart** showing churn rates for credit card holders vs. non credit card holders, indicating a higher churn rate among card holders.
 
-#### 7. Slicers
+**7. Slicers**: To enhance data exploration, I added slicers that allow filtering by key categories such as year, month, location, and customer attributes.
 
 - **Year** : Filters the data to display information for a selected year or across multiple years.
   
@@ -298,4 +298,4 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 ## CONCLUSION
 
-This Bank Customer Churn Analysis provides valuable insights into customer behavior, identifying key factors influencing churn such as **credit card ownership, regional variations, age group,** and **credit score**. By leveraging these insights, the bank can implement targeted retention strategies to improve customer engagement, particularly among inactive customers, senior citizens, and high-churn regions like Germany. Additionally, enhancing the value proposition for credit card holders and offering tailored support for lower credit score customers can further reduce churn. Through data-driven interventions, the bank can effectively improve customer retention, reduce revenue loss, and increase long-term profitability.
+This Bank Customer Churn Analysis provides valuable insights into customer behavior, identifying key factors influencing churn such as **credit card ownership, regional variations, age group,** and **credit score**. By leveraging these insights, the bank can implement targeted retention strategies to **improve customer engagement**, particularly among inactive customers, senior citizens, and high-churn regions like Germany. Additionally, enhancing the value proposition for credit card holders and offering tailored support for lower credit score customers can further reduce churn. Through data-driven interventions, the bank can effectively improve customer retention, reduce revenue loss, and increase long-term profitability.
