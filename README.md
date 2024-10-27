@@ -59,7 +59,7 @@ The data was sourced from **Kaggle.com**, which offers a range of fictitious dat
 
 ## DATA CLEANING
 
-After importing the data into Power BI, I first verified that all **data types** were correct. Using the column distribution and column quality features in the Power Query Editor, I checked for **duplicates** and **empty** values and found none. Additionally, I removed the 'RowNumber' column, as it was a sequential identifier not relevant to the analysis.
+After importing the data into Power BI, I first verified that all **data types** were correct. Using the column distribution and column quality features in the Power Query Editor, I checked for **duplicates** and **empty** values and found none. Additionally, I **removed** the 'RowNumber' column, as it was a sequential identifier not relevant to the analysis.
 
 
 <br>
@@ -72,7 +72,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
  
 ### 1. **Creating a Calendar Table** :
    
-- First I created a calendar table to manage time-based filtering, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
+- First I created a calendar table to manage **time-based filtering**, which is crucial for tracking customer churn patterns over different periods. By incorporating fields like **year, month,** and **month name**, I ensured that I could slice and dice the data more flexibly and easily identify trends.
 
 - The formula used:
 
