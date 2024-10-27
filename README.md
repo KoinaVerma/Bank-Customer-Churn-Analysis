@@ -32,6 +32,7 @@ The data was sourced from **Kaggle.com**, which offers a range of fictitious dat
 <img width="768" alt="Dataset picture" src="https://github.com/user-attachments/assets/f57ead36-d6a2-48dc-8eac-dc92475bb55f">
 
 <br>
+<br>
 
 **CustomerId** : Unique identifier for each customer.
 
