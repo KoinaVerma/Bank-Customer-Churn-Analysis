@@ -19,13 +19,13 @@ Customer churn is a significant challenge for financial institutions, directly a
   
 ## PROJECT OVERVIEW
 
-The goal of this analysis is to identify key drivers of customer churn and to develop actionable insights that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on **retaining high-value customers** and **reducing churn**.
+The goal of this analysis is to **identify key drivers of customer churn** and to **develop actionable insights** that help the bank improve customer retention. By understanding the profile and behavior of customers who are more likely to churn, the bank can focus its efforts on **retaining high-value customers** and **reducing churn**.
 
 <br>
 
 ## DATA SOURCE
 
-The data was sourced from **Kaggle.com**, which offers a range of fictitious datasets for data projects. The dataset used for this analysis is in **CSV format** or an **Excel Workbook** and consists of **14 columns** and **10,000 rows**. It contains the following columns:
+The data was sourced from **Kaggle.com**, which offers a range of fictitious datasets for data projects. The dataset used for this analysis is in **CSV format** and consists of **14 columns** and **10,000 rows**. It contains the following columns:
 
 <br>
 
