@@ -80,8 +80,6 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
   Calendar_Table = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]),LASTDATE(Bank_Churn[Bank DOJ]))
 ```
 
-<br>
-
 - The formula generated a range of dates based on the earliest and latest dates found in the "Bank_Churn" table under the "Date" column in a new table.
 
 - Then I extracted the **year, month** and **month name** from the designated column, using the following formulas:
@@ -97,7 +95,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
-   **A quick look at the Calendar Table:**
+  **A quick look at the Calendar Table:**
 
 <br>
 
