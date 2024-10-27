@@ -25,7 +25,7 @@ The goal of this analysis is to **identify key drivers of customer churn** and t
 
 ## DATA SOURCE
 
-The data was sourced from **Kaggle.com**, which offers a range of fictitious datasets for data projects. The dataset used for this analysis is in **CSV format** and consists of **14 columns** and **10,000 rows**. It contains the following columns:
+The data was sourced from **Kaggle.com**, which offers a range of fictitious datasets for data projects. The dataset used for this analysis is in **CSV format** and consists of **13 columns** and **10,000 rows**. It contains the following columns:
 
 <br>
 
