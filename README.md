@@ -261,7 +261,9 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 <br>
 <br>
 
-### ```DASHBOARD 2```
+### ``DASHBOARD 2``
+
+<br>
 
 **1. Monthly Churn Rates Across Years**: A **heatmap** providing a month-by-month view of churn rates across years, highlighting periods of high churn.
 
