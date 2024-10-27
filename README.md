@@ -104,6 +104,10 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 
 <br>
 
+<img width="222" alt="Calendar Table Picture" src="https://github.com/user-attachments/assets/94b4e53a-af0e-4caa-ad01-4a8c60cb49e5">
+
+<br>
+
 - To establish a relationship between the Bank_Churn table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol **'1'**, while in the Bank_Churn table some dates might have appeared multiple times, indicated by the symbol **'*'**. Which signified a **One-to-Many** relationship between the two tables.
 
 <br>
