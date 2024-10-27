@@ -107,6 +107,7 @@ As part of getting the dataset ready for analysis, I took several steps to ensur
 <img width="222" alt="Calendar Table Picture" src="https://github.com/user-attachments/assets/94b4e53a-af0e-4caa-ad01-4a8c60cb49e5">
 
 <br>
+<br>
 
 - To establish a relationship between the Bank_Churn table and the newly created Calendar_table, I connected the tables through the common field which is Date In the calendar table, each date appeared only once, denoted by the symbol **'1'**, while in the Bank_Churn table some dates might have appeared multiple times, indicated by the symbol **'*'**. Which signified a **One-to-Many** relationship between the two tables.
 
@@ -151,7 +152,7 @@ I created two dashboards to visualize my analysis, incorporating KPI cards and v
 
 <br>
 
-### DASHBOARD 1
+### ``DASHBOARD 1``
 
 #### 1. KPI Cards
 
@@ -253,9 +254,14 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
   
 - **Gender Category** : Enables analysis of churn trends by filtering the data based on customer gender (male or female).
 
-  <br>
+<br>
 
-### DASHBOARD 2
+<img width="876" alt="DASHBOARD 1" src="https://github.com/user-attachments/assets/65cf61dc-36f7-4029-926b-e8a70bc38193">
+
+<br>
+<br>
+
+### ```DASHBOARD 2```
 
 **1. Monthly Churn Rates Across Years**: A **heatmap** providing a month-by-month view of churn rates across years, highlighting periods of high churn.
 
@@ -269,6 +275,11 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 **6. Churned and Retained Customers by Age Group**: A **bar chart** comparing churned and retained customers across different age groups, helping visualize which groups have higher retention.
 
+<br>
+
+<img width="880" alt="DASHBOARD 2" src="https://github.com/user-attachments/assets/5fb770b7-00b0-447b-a09e-cf0431594dc1">
+
+<br>
 <br>
 
 ## INSIGHTS
