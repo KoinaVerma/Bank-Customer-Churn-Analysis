@@ -256,7 +256,7 @@ I used **DAX measures** in Power BI to create these KPI cards, provides a clear 
 
 <br>
 
-<img width="876" alt="DASHBOARD 1" src="https://github.com/user-attachments/assets/65cf61dc-36f7-4029-926b-e8a70bc38193">
+<img width="879" alt="DASHBOARD 1" src="https://github.com/user-attachments/assets/190b9ff3-9fc2-4148-b0b3-5507ef7b9a64">
 
 <br>
 <br>
